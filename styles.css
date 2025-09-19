@@ -92,7 +92,7 @@ section {
 }
 
 h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-
+h5 { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
 /* Grid */
 .grid {
   display: grid;
@@ -156,3 +156,4 @@ footer {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
