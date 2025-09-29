@@ -156,4 +156,25 @@ footer {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+.corner-images {
+  position: relative;
+  width: 100%;
+}
+
+.corner-images img {
+  width: 80px; /* ajusta el tamaño */
+  height: auto;
+  position: absolute;
+  top: 10px; /* distancia desde arriba */
+}
+
+.corner-left {
+  left: 10px; /* pegado a la izquierda */
+}
+
+.corner-right {
+  right: 10px; /* pegado a la derecha */
+}
+
+
 
