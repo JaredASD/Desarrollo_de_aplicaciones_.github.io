@@ -1,0 +1,334 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package Vista;
+
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+/**
+ *
+ * @author User
+ */
+public class Login extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Login
+     */
+    public Login() {
+        initComponents();
+        formulario();
+    }
+
+    // =================== CONFIGURACIÓN ===================
+   private void formulario() {
+        this.setTitle("Login - Universidad Peruana Los Andes");
+        this.setSize(new Dimension(500, 550));
+        this.setLocationRelativeTo(this);
+        this.setResizable(false);
+        this.getContentPane().setBackground(new Color(245, 245, 245)); // gris claro elegante
+
+        // Panel principal
+        panelLogin.setBackground(Color.WHITE);
+        panelLogin.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(0, 51, 153), 2), // borde azul institucional
+                new EmptyBorder(30, 30, 30, 30)
+        ));
+        panelLogin.setLayout(new BoxLayout(panelLogin, BoxLayout.Y_AXIS));
+
+        // Cabecera superior
+        JPanel headerPanel = new JPanel();
+        headerPanel.setBackground(new Color(0, 0, 200)); // azul fuerte
+        headerPanel.setPreferredSize(new Dimension(500, 80));
+        JLabel lblTitulo = new JLabel("UNIVERSIDAD PERUANA LOS ANDES", SwingConstants.CENTER);
+        lblTitulo.setForeground(Color.WHITE);
+        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        headerPanel.setLayout(new BorderLayout());
+        headerPanel.add(lblTitulo, BorderLayout.CENTER);
+
+        // Texto de bienvenida
+        JLabel lblBienvenida = new JLabel("Por favor inicie sesión según su rol en la universidad");
+        lblBienvenida.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblBienvenida.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblBienvenida.setBorder(new EmptyBorder(15, 0, 20, 0));
+
+        // Combo Rol
+        JLabel lblRol = new JLabel("Rol:");
+        lblRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        cmbRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        cmbRol.removeAllItems();
+        cmbRol.addItem("Estudiante");
+        cmbRol.addItem("Docente");
+        cmbRol.setMaximumSize(new Dimension(200, 30));
+        cmbRol.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Campo Usuario
+        JLabel lblUsuario = new JLabel("Usuario:");
+        lblUsuario.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtUsuario.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtUsuario.setMaximumSize(new Dimension(250, 30));
+        txtUsuario.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Campo Clave
+        JLabel lblClave = new JLabel("Clave:");
+        lblClave.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtClave.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtClave.setMaximumSize(new Dimension(250, 30));
+        txtClave.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Botón Ingresar
+        btnIngresar.setText("INGRESAR");
+        btnIngresar.setBackground(new Color(200, 0, 0));
+        btnIngresar.setForeground(Color.WHITE);
+        btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnIngresar.setFocusPainted(false);
+        btnIngresar.setMaximumSize(new Dimension(150, 40));
+        btnIngresar.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Botón Salir
+        btnSalir.setText("Salir");
+        btnSalir.setBackground(new Color(220, 220, 220));
+        btnSalir.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        btnSalir.setFocusPainted(false);
+        btnSalir.setMaximumSize(new Dimension(100, 30));
+        btnSalir.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Separadores
+        panelLogin.add(Box.createVerticalStrut(10));
+        panelLogin.add(lblBienvenida);
+        panelLogin.add(lblRol);
+        panelLogin.add(cmbRol);
+        panelLogin.add(Box.createVerticalStrut(10));
+        panelLogin.add(lblUsuario);
+        panelLogin.add(txtUsuario);
+        panelLogin.add(Box.createVerticalStrut(10));
+        panelLogin.add(lblClave);
+        panelLogin.add(txtClave);
+        panelLogin.add(Box.createVerticalStrut(20));
+        panelLogin.add(btnIngresar);
+        panelLogin.add(Box.createVerticalStrut(15));
+        panelLogin.add(btnSalir);
+
+        // Layout final
+        this.setLayout(new BorderLayout());
+        this.add(headerPanel, BorderLayout.NORTH);
+        this.add(panelLogin, BorderLayout.CENTER);
+   }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        panelLogin = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtClave = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
+        cmbRol = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panelLogin.setPreferredSize(new java.awt.Dimension(600, 600));
+
+        jLabel1.setText("Usuario");
+
+        jLabel2.setText("Clave");
+
+        jLabel3.setText("Rol");
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 255));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("UNIVERSIDAD PERUANA LOS ANDES");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(30, 30, 30))
+        );
+
+        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Porfavor inicia sesión según su rol en la universidad");
+
+        btnIngresar.setBackground(new java.awt.Color(204, 0, 0));
+        btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIngresar.setText("Ingresar");
+
+        btnSalir.setText("Salir");
+
+        javax.swing.GroupLayout panelLoginLayout = new javax.swing.GroupLayout(panelLogin);
+        panelLogin.setLayout(panelLoginLayout);
+        panelLoginLayout.setHorizontalGroup(
+            panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelLoginLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelLoginLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtUsuario)
+                                .addComponent(cmbRol, 0, 130, Short.MAX_VALUE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSalir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelLoginLayout.createSequentialGroup()
+                .addGap(275, 275, 275)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelLoginLayout.createSequentialGroup()
+                .addGap(287, 287, 287)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
+                .addContainerGap(144, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(142, 142, 142))
+        );
+        panelLoginLayout.setVerticalGroup(
+            panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cmbRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(16, 16, 16))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * @param args the command line arguments
+     */
+     public String getUsuario() { 
+         return txtUsuario.getText().trim(); 
+     }
+    public String getClave() { 
+        return new String(txtClave.getPassword()); 
+    }
+    public String getRol() { 
+        return (String) cmbRol.getSelectedItem(); 
+    }
+
+    public void agregarLoginListener(ActionListener listener) {
+        this.btnIngresar.addActionListener(listener);
+    }
+
+    public boolean validarCampos() {
+        if (getUsuario().isEmpty() || getClave().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor complete usuario y contraseña.", "Campos obligatorios", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cmbRol;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panelLogin;
+    private javax.swing.JPasswordField txtClave;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration//GEN-END:variables
+}
