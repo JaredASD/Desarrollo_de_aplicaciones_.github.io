@@ -21,3 +21,12 @@ toggleButtons.forEach(btn => {
       : 'Ver resumen';
   });
 });
+const bubbleContainer = document.querySelector('.bubbles');
+
+for (let i = 0; i < 40; i++) {
+  const span = document.createElement('span');
+  span.style.setProperty('--i', Math.random() * 10 + 1);
+  span.style.left = Math.random() * 100 + 'vw'; // posición horizontal aleatoria
+  span.style.width = span.style.height = Math.random() * 20 + 10 + 'px'; // tamaños variados
+  bubbleContainer.appendChild(span);
+}
