@@ -1,0 +1,177 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 10 dic. 2025, 9:23:05 p. m.
+    Author     : Lenovo
+*/
+
+/* ======= ESTILOS GENERALES ======= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f8ff; /* azul muy claro */
+    color: #003366;
+}
+
+/* Quitamos scroll horizontal */
+body, html {
+    overflow-x: hidden;
+}
+
+/* ======= MENÚ LATERAL IZQUIERDO ======= */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: 100vh;
+    background-color: #004a99; /* azul fuerte */
+    color: white;
+    padding-top: 20px;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+}
+.menu-lateral .logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.menu-lateral .logo img {
+    width: 120px;
+    max-width: 100%;
+}
+.menu-lateral h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral ul li {
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.menu-lateral ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+}
+
+.menu-lateral ul li:hover {
+    background-color: #0066cc; /* azul más claro */
+}
+
+/* ======= PERFIL LATERAL DERECHO ======= */
+.perfil-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 230px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    color: #003366;
+}
+
+.perfil-lateral h3 {
+    margin-top: 0;
+}
+
+.perfil-lateral .foto {
+    width: 90px;
+    height: 90px;
+    background-color: #cce0ff;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* ======= CONTENIDO CENTRAL ======= */
+.contenido {
+    margin-left: 210px;
+    margin-right: 230px;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+/* ======= TABLAS ======= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #99bbff;
+}
+
+th {
+    background-color: #004a99;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+/* ======= BOTONES ======= */
+.btn {
+    padding: 10px 18px;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: #0066cc;
+}
+
+/* ======= FORMULARIOS ======= */
+input[type=text],
+input[type=password],
+input[type=number],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #99bbff;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #003366;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ======= TITULOS DE SECCIONES ======= */
+.titulo-seccion {
+    font-size: 22px;
+    color: #003366;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #004a99;
+    padding-bottom: 5px;
+}
