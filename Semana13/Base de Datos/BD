@@ -1,0 +1,84 @@
+CREATE DATABASE tesisdb;
+USE tesisdb;
+CREATE TABLE Usuario (
+    idUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    correo VARCHAR(100) UNIQUE,
+    contraseña VARCHAR(100),
+    rol VARCHAR(20)
+);
+CREATE TABLE Docente (
+    idDocente INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    codigo VARCHAR(20) NOT NULL UNIQUE,
+    correo VARCHAR(80) NOT NULL UNIQUE,
+    especialidad VARCHAR(100),
+    
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+CREATE TABLE Estudiante (
+    idEstudiante INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT NOT NULL,
+    codigo VARCHAR(20) NOT NULL UNIQUE,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(80) NOT NULL UNIQUE,
+
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+CREATE TABLE Tesis (
+    idTesis INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    idEstudiante INT NOT NULL,
+    idDocenteAsignado INT NULL,
+    estado ENUM('pendiente','observado','aprobado','calificado') DEFAULT 'pendiente',
+    archivoPDF VARCHAR(255), -- ruta del archivo
+
+    FOREIGN KEY (idEstudiante) REFERENCES Estudiante(idEstudiante)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+
+    FOREIGN KEY (idDocenteAsignado) REFERENCES Docente(idDocente)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+CREATE TABLE Evaluacion (
+    idEvaluacion INT AUTO_INCREMENT PRIMARY KEY,
+    idTesis INT NOT NULL,
+    idDocente INT NOT NULL,
+    comentarios TEXT,
+    nota DECIMAL(4,2),
+
+    FOREIGN KEY (idTesis) REFERENCES Tesis(idTesis)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+
+    FOREIGN KEY (idDocente) REFERENCES Docente(idDocente)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+CREATE TABLE EvaluacionDetalle (
+    idDetalle INT AUTO_INCREMENT PRIMARY KEY,
+    idEvaluacion INT NOT NULL,
+    criterio INT NOT NULL,           -- 1..38
+    descripcion VARCHAR(300),
+    puntaje DECIMAL(3,1),            -- 1, 0.5, 0
+    
+    FOREIGN KEY (idEvaluacion) REFERENCES Evaluacion(idEvaluacion)
+        ON DELETE CASCADE
+);
+CREATE TABLE DetalleEvaluacion (
+    idDetalle INT AUTO_INCREMENT PRIMARY KEY,
+    idEvaluacion INT NOT NULL,
+    criterio VARCHAR(255) NOT NULL,
+    opcion ENUM('CUMPLE','PARCIAL','NO_CUMPLE') NOT NULL,
+    puntaje DECIMAL(4,2) NOT NULL,
+
+    FOREIGN KEY (idEvaluacion) REFERENCES Evaluacion(idEvaluacion)
+        ON DELETE CASCADE
+);
